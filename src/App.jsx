@@ -25,7 +25,6 @@ const App = () => {
   const [bgImage, setBgImage] = useState(backgroundImages[0]);
 
   useEffect(() => {
-    // Get the saved background image index from localStorage
     const savedIndex = localStorage.getItem("backgroundImageIndex");
     if (savedIndex !== null) {
       setBgImage(backgroundImages[parseInt(savedIndex)]);
