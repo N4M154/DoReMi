@@ -54,7 +54,6 @@ const App = () => {
     const nextIndex = (currentIndex + 1) % backgroundImages.length;
     setBgImage(backgroundImages[nextIndex]);
 
-    // Save the new index to localStorage
     localStorage.setItem("backgroundImageIndex", nextIndex);
   };
 
@@ -76,20 +75,20 @@ const App = () => {
           backgroundPosition: "center",
         }}
       >
-        <div className="flex space-x-6 bg-white bg-opacity-70 p-4 rounded-lg">
-          <div className="w-full max-w-md p-4 mb-6 bg-gradient-to-r from-green-800 via-slate-800 to-blue-900 border border-black rounded-lg shadow-custom">
-            <h1 className="text-3xl flex justify-center font-bold mb-6 text-teal-700">
+        <div className="flex space-x-6 bg-gray-700 shadow-xl shadow-pink-600 bg-opacity-70 p-4 rounded-lg">
+          <div className="w-full max-w-md p-4 mb-6 bg-gradient-to-r from-green-700 via-slate-700 to-blue-800 border border-zinc-500 rounded-lg shadow-lg shadow-teal-600">
+            <h1 className="text-3xl flex justify-center font-bold mb-6 text-teal-500">
               DoReMi
             </h1>
             <div className="mb-6">
-              <label className="block mb-2 text-lg text-white">
+              <label className="block mb-2 text-xl font-semibold text-teal-100">
                 Select your mood:
               </label>
               <div className="flex">
                 <select
                   value={selectedMood}
                   onChange={(e) => setSelectedMood(e.target.value)}
-                  className="p-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-pink-500 flex-grow"
+                  className="p-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-pink-500 flex-grow bg-pink-200"
                 >
                   <option value="">Select...</option>
                   {moods.map((mood) => (
@@ -109,15 +108,15 @@ const App = () => {
             </div>
           </div>
           {recommendations.length > 0 && (
-            <div className="w-full max-w-lg max-h-96 overflow-y-auto bg-white border border-gray-300 rounded-lg shadow-md p-4">
+            <div className="w-full max-w-lg max-h-96 overflow-y-auto bg-transparent rounded-xl shadow-lg shadow-pink-300 p-4">
               <div className="overflow-x-auto">
-                <table className="min-w-full bg-white border border-gray-300">
+                <table className="min-w-full bg-gradient-to-r from-green-200 to-blue-300 border border-gray-300 ">
                   <thead>
                     <tr>
-                      <th className="py-2 px-4 bg-gray-200 border-b font-bold text-xl">
+                      <th className="py-2 px-4 bg-transparent text-orange-600 border-b font-bold text-xl">
                         Song
                       </th>
-                      <th className="py-2 px-4 bg-gray-200 border-b font-bold text-xl">
+                      <th className="py-2 px-4 bg-transparent border-b font-bold text-xl text-orange-600">
                         Artist
                       </th>
                     </tr>
@@ -126,12 +125,12 @@ const App = () => {
                     {recommendations.map((track, index) => (
                       <tr
                         key={`${track.name}-${track.artist.name}-${index}`}
-                        className="hover:bg-gray-100"
+                        className="hover:bg-pink-100"
                       >
-                        <td className="border px-4 py-2 font-medium text-green-700">
+                        <td className="border px-4 py-2 font-medium text-green-800">
                           {track.name}
                         </td>
-                        <td className="border px-4 py-2 font-medium">
+                        <td className="border px-4 py-2 font-medium text-sky-800">
                           {track.artist.name}
                         </td>
                       </tr>
