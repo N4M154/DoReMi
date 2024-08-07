@@ -16,7 +16,16 @@ const moods = [
   "nostalgic",
 ];
 
-const backgroundImages = ["url(/images/1.png)", "url(/images/5.png)"];
+const backgroundImages = [
+  "url(https://images7.alphacoders.com/135/thumb-1920-1351260.png)",
+  {
+    /*/images/1.png*/
+  },
+  "url(https://images8.alphacoders.com/136/thumb-1920-1363709.png)",
+  {
+    /*/images/5.png*/
+  },
+];
 
 const App = () => {
   const [selectedMood, setSelectedMood] = useState("");
