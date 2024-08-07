@@ -47,7 +47,7 @@ const App = () => {
         params: {
           method: "tag.getTopTracks",
           tag: selectedMood,
-          api_key: import.meta.env.VITE_API_KEY,
+          api_key: import.meta.env.VITE_LASTFM_API_KEY,
           format: "json",
         },
       });
